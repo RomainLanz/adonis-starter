@@ -1,0 +1,55 @@
+{% extends 'frontend.layout.app' %}
+
+{% set title = 'Login' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      {# Login Panel #}
+      <div class="panel panel-default">
+        <div class="panel-heading">Login</div>
+          <div class="panel-body">
+
+            {% if old('errors') %}
+              <div class="alert alert-danger">
+                We cannot find any account with these credentials.
+              </div>
+            {% endif %}
+
+            {# Login Form #}
+            <form class="form-horizontal" action="{{ 'sessions.store' | route }}" method="POST" role="form">
+              {{ csrfField }}
+
+              {# Username Field #}
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Username</label>
+                <div class="col-md-6">
+                  <input class="form-control" id="username" name="username" type="text" value="{{ old('username') }}" required autofocus>
+                </div>
+              </div>
+
+              {# Password Field #}
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="password">Password</label>
+                <div class="col-md-6">
+                  <input class="form-control" id="password" name="password" type="password" required>
+                </div>
+              </div>
+
+              {# Submit Button #}
+              <div class="form-group">
+                <div class="col-md-8 col-md-offset-4">
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

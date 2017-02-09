@@ -2,6 +2,8 @@
 
 const Env = use('Env')
 const Youch = use('youch')
+const path = require('path')
+const Helpers = use('Helpers')
 const Http = exports = module.exports = {}
 
 /**
@@ -38,4 +40,12 @@ Http.handleError = function * (error, request, response) {
  * starting http server.
  */
 Http.onStart = function () {
+  const View = use('View')
+
+  View.filter('mix', text => {
+    if (!text) return
+
+    const manifest = require(path.join(Helpers.publicPath(), 'mix-manifest.json'))
+    return manifest[text]
+  })
 }

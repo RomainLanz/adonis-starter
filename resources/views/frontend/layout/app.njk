@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {# Meta Information #}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {# Title #}
+  <title>{{ title }} &middot; Adonis Framework</title>
+
+  {# Fonts #}
+
+  {# CSS #}
+  <link href="{{ '/css/app.css' | mix }}" rel="stylesheet">
+
+  {# Scripts #}
+  {% block scripts %} {% endblock %}
+</head>
+<body>
+
+  {# Header #}
+  <header>
+    {% include 'frontend.layout.navigation' %}
+  </header>
+
+  {# Main Content #}
+  <main class="container">
+    {% block content %} {% endblock %}
+  </main>
+
+</body>
+</html>

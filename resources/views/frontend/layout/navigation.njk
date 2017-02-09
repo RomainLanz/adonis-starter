@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    {# Brand #}
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ 'frontend.pages.home' | route }}">Adonis Framework</a>
+    </div>
+
+    {# User Actions #}
+    <ul class="nav navbar-nav navbar-right">
+      {% ifAsync currentUser %}
+        <li><a href="{{ 'sessions.destroy' | route }}">Logout</a></li>
+      {% else %}
+        <li><a href="{{ 'sessions.create' | route }}">Login</a></li>
+        <li><a href="{{ 'users.create' | route }}">Register</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

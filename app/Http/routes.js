@@ -17,4 +17,16 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('frontend.pages.home').as('frontend.pages.home')
+
+Route.group('routes.guest', () => {
+  Route.get('login').render('frontend.sessions.create').as('sessions.create')
+  Route.post('login', 'SessionsController.store').as('sessions.store')
+
+  Route.get('register').render('frontend.users.create').as('users.create')
+  Route.post('register', 'AccountsController.store').as('users.store')
+}).middleware('guest')
+
+Route.group('routes.auth', () => {
+  Route.get('logout', 'SessionsController.destroy').as('sessions.destroy')
+}).middleware('auth')

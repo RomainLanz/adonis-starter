@@ -1,0 +1,75 @@
+{% extends 'frontend.layout.app' %}
+
+{% set title = 'Register' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      {# Register Panel #}
+      <div class="panel panel-default">
+        <div class="panel-heading">Register</div>
+          <div class="panel-body">
+
+            {% if old('errors') %}
+              <div class="alert alert-danger">
+                <ul>
+                  {% for error in old('errors') %}
+                    <li> {{ error.message }} </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {# Register Form #}
+            <form class="form-horizontal" action="{{ 'users.store' | route }}" method="POST" role="form">
+              {{ csrfField }}
+
+              {# Username Field #}
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Username</label>
+                <div class="col-md-6">
+                  <input class="form-control" id="username" name="username" type="text" value="{{ old('username') }}" required autofocus>
+                </div>
+              </div>
+
+              {# Email Field #}
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="email">E-Mail Address</label>
+                <div class="col-md-6">
+                  <input class="form-control" id="email" name="email" type="email" value="{{ old('email') }}" required>
+                </div>
+              </div>
+
+              {# Password Field #}
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="password">Password</label>
+                <div class="col-md-6">
+                  <input class="form-control" id="password" name="password" type="password" required>
+                </div>
+              </div>
+
+              {# Confirm Password Field #}
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="password_confirmation">Confirm Password</label>
+                <div class="col-md-6">
+                  <input class="form-control" id="password_confirmation" name="password_confirmation" type="password" required>
+                </div>
+              </div>
+
+              {# Submit Button #}
+              <div class="form-group">
+                <div class="col-md-8 col-md-offset-4">
+                  <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

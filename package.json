@@ -3,10 +3,11 @@
   "version": "3.2.1",
   "main": "server.js",
   "scripts": {
-    "start": "echo \"\\033[31mWARN: 'start' will be depreciated soon. Instead use 'npm run serve'\" && npm run serve",
-    "dev": "echo \"\\033[31mWARN: 'dev' will be depreciated soon. Instead use 'npm run serve:dev'\" && npm run serve:dev",
-    "serve:dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "serve": "node server.js",
+    "serve:dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "build:dev": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:watch": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "standard"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "adonis-framework": "^3.0.9",
     "adonis-lucid": "^3.0.13",
     "adonis-middleware": "^1.0.10",
+    "adonis-validation-provider": "^3.0.5",
     "adonis-websocket": "^1.0.2",
     "standard": "^8.6.0",
     "youch": "^2.0.2"
@@ -35,6 +37,9 @@
     "App": "./app"
   },
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "cross-env": "^3.1.4",
+    "laravel-mix": "^0.7.4",
     "nodemon": "^1.11.0",
     "standard": "^8.6.0"
   }
