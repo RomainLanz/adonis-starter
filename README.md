@@ -1,5 +1,5 @@
 <p align="center">
-  # Adonis Starter
+  <h1>Adonis Starter</h1>
 </p>
 
 <br>
