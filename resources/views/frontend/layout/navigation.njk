@@ -10,8 +10,8 @@
       {% ifAsync currentUser %}
         <li><p class="navbar-text navbar-right"> Signed in as <strong>{{ currentUser.username }}</strong> - <a href="{{ 'sessions.destroy' | route }}">Logout</a></p></li>
       {% else %}
-        <li><a href="{{ 'sessions.create' | route }}">Login</a></li>
-        <li><a href="{{ 'accounts.create' | route }}">Register</a></li>
+        <li class="{% if currentUrl == '/login' %}active{% endif %}"><a href="{{ 'sessions.create' | route }}">Login</a></li>
+        <li class="{% if currentUrl == '/register' %}active{% endif %}"><a href="{{ 'accounts.create' | route }}">Register</a></li>
       {% endif %}
     </ul>
   </div>

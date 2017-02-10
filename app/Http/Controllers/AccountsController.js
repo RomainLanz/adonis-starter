@@ -15,9 +15,7 @@ class AccountsController {
     })
 
     if (validation.fails()) {
-      yield request.withOut('password', 'password_confirmation')
-        .andWith({ errors: validation.messages() }).flash()
-      return response.redirect('back')
+      return response.badRequest(validation.messages())
     }
 
     delete data['password_confirmation']

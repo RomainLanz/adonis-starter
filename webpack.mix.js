@@ -17,4 +17,4 @@ mix
   .setPublicPath('public')
   .sass('resources/assets/sass/app.sass', 'public/css')
   .js('resources/assets/js/app.js', 'public/js')
-  .extract(['vue', 'axios', 'jquery'])
+  .extract(['vue', 'axios', 'lodash'])

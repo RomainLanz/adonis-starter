@@ -1,7 +1,8 @@
 /**
  * Load dependencies of our application.
  */
-window.$ = window.jQuery = require('jquery')
+// window.$ = window.jQuery = require('jquery')
+window._ = require('lodash')
 window.Vue = require('vue')
 window.axios = require('axios')
 
@@ -14,5 +15,6 @@ axios.defaults.headers.post['X-XSRF-TOKEN'] = document.querySelector('meta[name=
 /**
  * Instantiate Adonis internal dependencies.
  */
- window.Adonis = {}
- window.Adonis.Event = new Vue()
+window.Adonis = {}
+window.Adonis.Event = new Vue()
+window.Adonis.Form = require('./form/Form')
