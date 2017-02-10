@@ -16,3 +16,5 @@ const { mix } = require('laravel-mix')
 mix
   .setPublicPath('public')
   .sass('resources/assets/sass/app.sass', 'public/css')
+  .js('resources/assets/js/app.js', 'public/js')
+  .extract(['vue', 'axios', 'jquery'])

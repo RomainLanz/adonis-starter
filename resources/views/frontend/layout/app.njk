@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf_token" content="{{ csrfToken }}">
 
   {# Title #}
   <title>{{ title }} &middot; Adonis Framework</title>
@@ -17,17 +18,29 @@
   {# Scripts #}
   {% block scripts %} {% endblock %}
 </head>
-<body>
+<body v-cloak>
 
-  {# Header #}
-  <header>
-    {% include 'frontend.layout.navigation' %}
-  </header>
+  {# VueJs Wrapper #}
+  <div id="adonis-app">
 
-  {# Main Content #}
-  <main class="container">
-    {% block content %} {% endblock %}
-  </main>
+    {# Header #}
+    <header>
+      {% include 'frontend.layout.navigation' %}
+    </header>
+
+    {# Main Content #}
+    <main class="container">
+      {% block content %} {% endblock %}
+    </main>
+
+    <example></example>
+
+  </div>
+
+  {# JavaScript #}
+  <script src="{{ '/js/manifest.js' | mix }}"></script>
+  <script src="{{ '/js/vendor.js' | mix }}"></script>
+  <script src="{{ '/js/app.js' | mix }}"></script>
 
 </body>
 </html>
