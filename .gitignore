@@ -1,6 +1,6 @@
-node_modules
-storage
+node_modules/
+public/
+storage/
 !.gitkeep
 .env
 npm-debug.log
-public
