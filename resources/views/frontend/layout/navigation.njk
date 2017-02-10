@@ -8,7 +8,7 @@
     {# User Actions #}
     <ul class="nav navbar-nav navbar-right">
       {% ifAsync currentUser %}
-        <li><a href="{{ 'sessions.destroy' | route }}">Logout</a></li>
+        <li><p class="navbar-text navbar-right"> Signed in as <strong>{{ currentUser.username }}</strong> - <a href="{{ 'sessions.destroy' | route }}">Logout</a></p></li>
       {% else %}
         <li><a href="{{ 'sessions.create' | route }}">Login</a></li>
         <li><a href="{{ 'accounts.create' | route }}">Register</a></li>
