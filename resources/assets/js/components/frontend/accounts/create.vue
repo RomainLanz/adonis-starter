@@ -5,8 +5,8 @@
       <div class="panel-body">
 
         <div class="alert alert-success" role="alert" v-if="form.successful">
-          <strong>Your account has been created with success!</strong>
-          <p>You are now able to log you in.</p>
+          <strong>Your account has been successfully created!</strong>
+          <p>You are now able to log in.</p>
         </div>
 
         <!-- Register Form -->
