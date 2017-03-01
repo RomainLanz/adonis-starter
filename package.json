@@ -15,28 +15,27 @@
   "description": "",
   "private": true,
   "dependencies": {
-    "adonis-ace": "^3.0.6",
+    "adonis-ace": "^3.0.7",
     "adonis-auth": "^1.0.5",
     "adonis-commands": "^2.1.5",
     "adonis-fold": "^3.0.3",
-    "adonis-framework": "^3.0.9",
-    "adonis-lucid": "^3.0.13",
-    "adonis-middleware": "^1.0.10",
+    "adonis-framework": "^3.0.11",
+    "adonis-lucid": "^3.0.14",
+    "adonis-middleware": "^1.0.11",
     "adonis-validation-provider": "^3.0.5",
     "adonis-websocket": "^1.0.2",
-    "standard": "^8.6.0",
-    "youch": "^2.0.2"
+    "standard": "^9.0.0",
+    "youch": "^2.0.4"
   },
   "devDependencies": {
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^3.1.4",
     "jquery": "^3.1.1",
-    "laravel-mix": "^0.7.4",
+    "laravel-mix": "^0.8.8",
     "lodash": "^4.17.4",
     "nodemon": "^1.11.0",
-    "standard": "^8.6.0",
-    "vue": "^2.1.10"
+    "vue": "^2.2.1"
   },
   "standard": {
     "global": [
